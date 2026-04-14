@@ -1,19 +1,19 @@
-### **Тестовое задание от Avito Tech на позицию стажера-бекендера.**
+### **Avito Tech Internship Backend Test Assignment**
 
-Цель – **разработать чат-сервер**, предоставляющий `HTTP API` для работы с чатами и сообщениями пользователя.
+The goal is to **develop a chat server** that provides an `HTTP API` for working with chats and user messages.
 
-Источник: [solvit.space](https://solvit.space/test-tasks/1)
+Source: https://solvit.space/test-tasks/1
 
-### Разработка:
-- [ ] Основные сущности: User, Message, Chat.
-- [ ] Настроить хранилище данных.
-- [ ] Основные API методы:
-    - [ ] Добавить нового пользователя.
-    - [ ] Создать новый чат между пользователями.
-    - [ ] Отправить сообщение в чат от лица пользователя.
-    - [ ] Получить список чатов конкретного пользователя.
-    - [ ] Получить список сообщений в конкретном чате.
-- [ ] Предоставить инструкцию по запуску приложения.
+### Development:
+- [ ] Core entities: User, Message, Chat.
+- [ ] Set up data storage.
+- [ ] Main API methods:
+    - [ ] Add a new user.
+    - [ ] Create a new chat between users.
+    - [ ] Send a message to a chat on behalf of a user.
+    - [ ] Get the list of chats for a specific user.
+    - [ ] Get the list of messages in a specific chat.
+- [ ] Provide instructions for running the application.
 
-Бонус:
-- [ ] Использовать контейнеризацию с возможностью запустить проект командой `docker-compose up`.
+### Bonus:
+- [ ] Use containerization with the ability to run the project using `docker-compose up`.
