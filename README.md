@@ -8,14 +8,17 @@ Source: https://solvit.space/test-tasks/1
 - Core entities:
     - [x] [User](https://github.com/onesch/avito-Intern-backend-task/pull/1).
     - [ ] Message.
-    - [ ] Chat.
+    - [x] Chat.
 - - [x] [Set up data storage](https://github.com/onesch/avito-Intern-backend-task/pull/1).
 - Main API methods:
     - [x] [Add a new user](https://github.com/onesch/avito-Intern-backend-task/pull/1).
         ```
         curl -X POST "http://127.0.0.1:9000/users/create-user" -H "Content-Type: application/json" -d '{"username": "test"}'
         ```
-    - [ ] Create a new chat between users.
+    - [x] Create a new chat between users.
+        ```
+        curl -X POST "http://127.0.0.1:9000/chats/create-chat" -H "Content-Type: application/json" -d '{"name": "test", "users": [1, 2, 3]}'
+        ```
     - [ ] Send a message to a chat on behalf of a user.
     - [ ] Get the list of chats for a specific user.
     - [ ] Get the list of messages in a specific chat.
