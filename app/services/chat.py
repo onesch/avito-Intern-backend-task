@@ -1,3 +1,5 @@
+from typing import List
+
 from fastapi import HTTPException
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -27,11 +29,11 @@ def create_chat(db: Session, name: str, users: list[int]) -> Chat:
         select(User).where(User.id.in_(users))
     ).scalars().all()
 
-    # check user
+    # check users
     if len(db_users) != len(users):
         raise HTTPException(
             status_code=404,
-            detail="some users not found"
+            detail="some users not found."
         )
 
     # many-to-many
@@ -43,3 +45,18 @@ def create_chat(db: Session, name: str, users: list[int]) -> Chat:
     db.refresh(db_chat)
 
     return db_chat
+
+
+def get_chats_by_user_id(db: Session, user_id: int) -> List[Chat]:
+    # get / check user
+    db_user = db.execute(
+        select(User).where(User.id == user_id)
+    ).scalars().first()
+
+    if not db_user:
+        raise HTTPException(
+            status_code=404,
+            detail="user not found."
+        )
+
+    return db_user.chats
