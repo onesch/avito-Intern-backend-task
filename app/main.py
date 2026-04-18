@@ -2,7 +2,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from app.database.init_db import init_db
+
 from app.routes.user import router as user_api_router
+from app.routes.chat import router as chat_api_router
 
 
 @asynccontextmanager
@@ -28,6 +30,7 @@ def create_app() -> FastAPI:
 
     # routers
     app.include_router(user_api_router, prefix="/users")
+    app.include_router(chat_api_router, prefix="/chats")
 
     return app
 
