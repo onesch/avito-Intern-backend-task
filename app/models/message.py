@@ -4,7 +4,6 @@ from sqlalchemy import DateTime, ForeignKey, Integer, String, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models.base import Base
-from .associations import message_author_association
 
 if TYPE_CHECKING:
     from app.models.user import User
@@ -20,9 +19,5 @@ class Message(Base):
         DateTime(timezone=True), server_default=func.now(),
     )
 
-    chat_id: Mapped[int] = mapped_column(
-        ForeignKey("chats.id", ondelete="CASCADE"), unique=True
-    )
-    author: Mapped["User"] = relationship(
-        "User", secondary=message_author_association, back_populates="messages",
-    )
+    chat_id: Mapped[int] = mapped_column(ForeignKey("chats.id"))
+    author: Mapped["User"] = relationship("User", back_populates="messages")
