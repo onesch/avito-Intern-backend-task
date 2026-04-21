@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 
 from app.models.chat import Chat
 from app.models.user import User
+from app.utils.utils import get_or_404
 
 
 def create_chat(db: Session, name: str, users: list[int]) -> Chat:
@@ -48,15 +49,8 @@ def create_chat(db: Session, name: str, users: list[int]) -> Chat:
 
 
 def get_chats_by_user_id(db: Session, user_id: int) -> List[Chat]:
+    """Get user chat objects list."""
     # get / check user
-    db_user = db.execute(
-        select(User).where(User.id == user_id)
-    ).scalars().first()
-
-    if not db_user:
-        raise HTTPException(
-            status_code=404,
-            detail="user not found."
-        )
+    db_user = get_or_404(db, User, user_id, "user")
 
     return db_user.chats

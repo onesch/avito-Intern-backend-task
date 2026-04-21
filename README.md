@@ -23,12 +23,16 @@ Source: https://solvit.space/test-tasks/1
         ```bash
         curl -X GET http://127.0.0.1:9000/chats/get-chats/user/1
         ```
-    - [ ] Send a message to a chat on behalf of a user.
+    - [x] [Send a message to a chat on behalf of a user](https://github.com/onesch/avito-Intern-backend-task/pull/2).
+        ```bash
+        curl -X POST "http://127.0.0.1:9000/messages/create-message" -H "Content-Type: application/json" -d '{"chat_id": 1, "author_id": 1, "text": "test"}'
+        ```
     - [ ] Get the list of messages in a specific chat.
 - - [x] Provide instructions for running the application.
 
 ### Bonus:
 - - [ ] Use containerization with the ability to run the project using `docker-compose up`.
+- - [ ] Add test coverage.
 
 ## Run:
 Project uses SQLAlchemy, Pydantic and PostgreSQL.
