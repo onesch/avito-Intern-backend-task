@@ -7,7 +7,7 @@ Source: https://solvit.space/test-tasks/1
 ## Development:
 - Core entities:
     - [x] [User](https://github.com/onesch/avito-Intern-backend-task/pull/1).
-    - [ ] Message.
+    - [x] [Message](https://github.com/onesch/avito-Intern-backend-task/pull/2).
     - [x] [Chat](https://github.com/onesch/avito-Intern-backend-task/pull/2).
 - - [x] [Set up data storage](https://github.com/onesch/avito-Intern-backend-task/pull/1).
 - Main API methods:
