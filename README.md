@@ -27,7 +27,10 @@ Source: https://solvit.space/test-tasks/1
         ```bash
         curl -X POST "http://127.0.0.1:9000/messages/create-message" -H "Content-Type: application/json" -d '{"chat_id": 1, "author_id": 1, "text": "test"}'
         ```
-    - [ ] Get the list of messages in a specific chat.
+    - [x] [Get the list of messages in a specific chat](https://github.com/onesch/avito-Intern-backend-task/pull/2).
+        ```bash
+        curl -X GET "http://127.0.0.1:9000/messages/get-messages/chat/1"
+        ```
 - - [x] Provide instructions for running the application.
 
 ### Bonus:
