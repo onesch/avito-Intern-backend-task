@@ -5,7 +5,9 @@ from app.settings import REFRESH_DB
 # Register models with Base.metadata
 from app.models.user import User
 from app.models.chat import Chat
+from app.models.message import Message
 from app.models.associations import chat_user_association
+from app.models.associations import message_author_association
 
 def init_db():
     """
