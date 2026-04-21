@@ -21,7 +21,7 @@ Source: https://solvit.space/test-tasks/1
         ```
     - [x] [Get the list of chats for a specific user](https://github.com/onesch/avito-Intern-backend-task/pull/2).
         ```bash
-        curl -X GET http://127.0.0.1:9000/chats/get-chats/user/1
+        curl -X GET "http://127.0.0.1:9000/chats/get-chats/user/1"
         ```
     - [x] [Send a message to a chat on behalf of a user](https://github.com/onesch/avito-Intern-backend-task/pull/2).
         ```bash
