@@ -20,4 +20,6 @@ class Message(Base):
     )
 
     chat_id: Mapped[int] = mapped_column(ForeignKey("chats.id"))
-    author: Mapped["User"] = relationship("User", back_populates="messages")
+    author_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
+
+    author: Mapped["User"] = relationship("User")
