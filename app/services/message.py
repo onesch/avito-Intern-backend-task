@@ -1,3 +1,6 @@
+from typing import List
+
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.models.chat import Chat
@@ -26,3 +29,16 @@ def create_message(
     db.refresh(db_message)
 
     return db_message
+
+
+def get_messages_by_chat_id(db: Session, chat_id: int) -> List[Chat]:
+    """Get chat messages list."""
+    # check chat
+    db_chat = get_or_404(db, Chat, chat_id, "chat")
+
+    # get messages
+    db_messages = db.execute(
+        select(Message).where(Message.chat_id == chat_id)
+    ).scalars().all()
+
+    return db_messages
