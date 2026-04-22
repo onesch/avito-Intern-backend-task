@@ -14,7 +14,7 @@ router = APIRouter(tags=["messages"])
 @router.post(
     "/create-message",
     response_model=MessageResponse,
-    summary="Create a new chat",
+    summary="Create a new message",
     description="Creates a new message in the database using provided chat_id, author_id and text."
 )
 def create_message_endpoint(
