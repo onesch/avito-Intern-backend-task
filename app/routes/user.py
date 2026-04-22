@@ -20,7 +20,7 @@ def create_user_endpoint(
     db: Session = Depends(get_db),
 ):
     """
-    Returns created user object with id and timestamp.
+    Returns created user object.
 
     - username: unique username for the user
     """

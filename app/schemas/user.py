@@ -18,7 +18,7 @@ class UserResponse(BaseModel):
 
     Attributes:
         id (int): Unique user ID.
-        username (str): Username of the user.
+        username (str): Unique username of the user.
         created_at (datetime): Timestamp when user was created.
     """
     id: int
