@@ -34,7 +34,14 @@ Source: https://solvit.space/test-tasks/1
 - - [x] Provide instructions for running the application.
 
 ### Bonus:
-- - [ ] Use containerization with the ability to run the project using `docker-compose up`.
+- - [x] [Use containerization with the ability to run the project using `docker-compose up`](https://github.com/onesch/avito-Intern-backend-task/pull/4).
+    ```bash
+    sudo systemctl restart docker
+    docker ps -a
+
+    docker compose up --build
+    docker compose down -v       # optional
+    ```
 - - [ ] Add test coverage.
 
 ## Run:
